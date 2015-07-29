@@ -1,10 +1,11 @@
 
 log '[dummy/application/template]'
 
-h1 hello
+h6 hello
 	
 / h1 hello
-kit-canvas
-	p hello there
+kit-canvas class="col-6"
+	div.content-1.bg-blue stuff
+	div.content-2.bg-red stuff
 
 / = outlet
