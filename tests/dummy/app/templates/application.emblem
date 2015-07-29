@@ -1,10 +1,10 @@
 
-log '[application/template]'
+log '[dummy/application/template]'
 
-
-	
 h1 hello
-kit-canvas 
-	p hello there
+	
+/ h1 hello
+/ kit-canvas 
+/ 	p hello there
 
-= outlet
+/ = outlet
