@@ -3,7 +3,7 @@
 module.exports = function(/* environment, appConfig */) {
   return { 
 
-	    modulePrefix: 'ember-cli-kit',
-	    podModulePrefix: 'ember-cli-kit/pods',
+	    // modulePrefix: 'ember-cli-kit',
+	    // podModulePrefix: 'ember-cli-kit/pods',
 	};
 };

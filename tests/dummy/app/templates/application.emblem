@@ -1,0 +1,10 @@
+
+log '[application/template]'
+
+
+	
+h1 hello
+kit-canvas 
+	p hello there
+
+= outlet
