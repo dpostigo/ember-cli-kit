@@ -1,0 +1,14 @@
+
+/ div.bg-blue
+/ 	h3 kit-canvas
+
+/ 	p {{yield}}
+
+div.site-canvas.col-6.border
+    div.content.bg-yellow
+        = yield content
+
+    div.navigation.bg-red
+        div.flex.flex-justify.mx-auto.col-6
+            a href="#" click="slide" one
+            a href="#" click="slide" one

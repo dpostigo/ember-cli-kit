@@ -2,7 +2,7 @@ import { moduleForComponent, test } from 'ember-qunit';
 import hbs from 'htmlbars-inline-precompile';
 
 
-moduleForComponent('kit-canvas', 'Integration | Component | kit canvas', {
+moduleForComponent('/kit-canvas', 'Integration | Component | kit canvas', {
   integration: true
 });
 
