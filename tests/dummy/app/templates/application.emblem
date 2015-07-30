@@ -1,12 +1,27 @@
 
 log '[dummy/application/template]'
+/ log '[dummy/application/template], firstName = ', firstName
 
-h6 hello
+
+= firstName
+= slides
+
 	
-/ h1 hello
-kit-canvas class="col-6"
-	div.content-1.bg-blue stuff
-	div.content-2.bg-red stuff
+div.bg-darken-1.p1.m1
+	kit-canvas class="col-6" items=slides as |item|
+		div.content-1.bg-blue stuff
+		div.content-2.bg-red stuff
 
-/ = outlet
+
+div.bg-darken-1.p1.m1
+	h5 kit-canvas2 tests
+	h6 test1
+	kit-canvas2 class="col-3" items=slides as |item|
+		/ a click="click" = index
+		/ p.border = index
+		div
+			p = item
+			p = index
+
+
 

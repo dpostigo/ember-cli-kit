@@ -1,0 +1,1 @@
+export { default } from 'ember-cli-kit/components/simple-component/component';

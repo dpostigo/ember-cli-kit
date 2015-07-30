@@ -1,0 +1,1 @@
+export { default } from 'ember-cli-kit/components/kit-canvas2/component';

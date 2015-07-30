@@ -1,13 +1,20 @@
+
 & {
 	
 }
 
-& .kit-canvas-container {
+& .kit-canvas-scroller {
 	overflow-x: hidden;
+
 } 
 
-& .kit-canvas-container-content {
-	transform: translate3d(0%,0,0); 
+& .kit-canvas-content {
+	/*transform: translate3d(0%,0,0); */
 }
 
 
+& .kit-canvas-content div {
+
+	/*.flex-none;*/
+	
+}

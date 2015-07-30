@@ -1,11 +1,27 @@
-div.kit-canvas-container
-	div.kit-canvas-content
+div.kit-canvas-scroller
+	/ div.kit-canvas-content {{bind-attr style="computedAngle"}}
+	/ div.kit-canvas-content style=canvasStyle
+	div.kit-canvas-content style=canvasStyle
 		== yield content
 
 div.kit-canvas-navigation
 	div.flex.flex-justify.mx-auto.col-6
-		a href="#" click="slide" button
-		a href="#" click="slide" button
+		each items as |item index|
+			a href="#" = index
+			/ a href="#" click="{slide index}" = index
+			/ a href="#" {action 'slide' index} = index
+			/ a href="#" click="'slide' index" = index
+			/ a href="#" click="{{action 'slide' index}}" = index
+			/ a href="#" {action 'slide' index}" = index
+			/ a href="#" click={action 'slide' index} = index
+			/ button{{action 'slide' index}} = index
+
+			/ button{action 'slide' index} = index
+
+		/ a href="#" click="slide" button
+		/ a href="#" click="slide" button
+		/ a href="#" click="slide" button
+		/ a href="#" click="slide" button
 
 / div.kit-canvas-navigation.bg-red
 /     div.flex.flex-justify.mx-auto.col-6
