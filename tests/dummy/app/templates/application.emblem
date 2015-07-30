@@ -9,3 +9,4 @@ kit-canvas class="col-6"
 	div.content-2.bg-red stuff
 
 / = outlet
+

@@ -12,3 +12,4 @@ div.site-canvas.col-6.border
         div.flex.flex-justify.mx-auto.col-6
             a href="#" click="slide" one
             a href="#" click="slide" one
+
