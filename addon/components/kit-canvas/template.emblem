@@ -1,15 +1,14 @@
+div.kit-canvas-container
+	div.kit-canvas-content
+		== yield content
 
-/ div.bg-blue
-/ 	h3 kit-canvas
+div.kit-canvas-navigation
+	div.flex.flex-justify.mx-auto.col-6
+		a href="#" click="slide" button
+		a href="#" click="slide" button
 
-/ 	p {{yield}}
-
-div.site-canvas.col-6.border
-    div.content.bg-yellow
-        = yield content
-
-    div.navigation.bg-red
-        div.flex.flex-justify.mx-auto.col-6
-            a href="#" click="slide" one
-            a href="#" click="slide" one
+/ div.kit-canvas-navigation.bg-red
+/     div.flex.flex-justify.mx-auto.col-6
+/         a href="#" click="slide" one
+/         a href="#" click="slide" one
 

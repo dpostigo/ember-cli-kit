@@ -3,14 +3,17 @@ import layout from './template';
 
 export default Ember.Component.extend({
   layout: layout,
+  classNames: ['site-canvas'],
   classNameBindings: ['canvas'],
-  canvas: '0',
+  canvas: 'canvas-0',
   actions: {
-      slide: function(param) {
+      slide: function() {
       	// console.log(this.get('pages'));
       	var index = this.get('param');
-      	this.set('canvas', 'canvas-' + index)
-      	
+      	this.set('canvas', 'canvas-' + index);
+
+		// transform: translate3d(-100%,0,0); 
+
       }
   }
 });
