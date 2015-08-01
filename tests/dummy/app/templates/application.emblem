@@ -6,6 +6,8 @@ log '[dummy/application/template]'
 = firstName
 = slides
 
+
+simple-component items=slides
 	
 div.bg-darken-1.p1.m1
 	kit-canvas class="col-6" items=slides as |item|

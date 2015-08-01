@@ -1,13 +1,13 @@
 div.kit-canvas-scroller
 	/ div.kit-canvas-content {{bind-attr style="computedAngle"}}
 	/ div.kit-canvas-content style=canvasStyle
-	div.kit-canvas-content style=canvasStyle
+	div.kit-canvas-content{bind-attr style=canvasStyle2}
 		== yield content
 
 div.kit-canvas-navigation
 	div.flex.flex-justify.mx-auto.col-6
 		each items as |item index|
-			a href="#" = index
+			a{action 'slideToIndex' index} = index
 			/ a href="#" click="{slide index}" = index
 			/ a href="#" {action 'slide' index} = index
 			/ a href="#" click="'slide' index" = index

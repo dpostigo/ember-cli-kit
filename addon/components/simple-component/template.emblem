@@ -1,2 +1,4 @@
 
 
+each items as |item index|
+	a{action 'save' index} = index
