@@ -1,5 +1,6 @@
 module.exports = {
   description: '',
+  name: 'ember-cli-kit',
 
   // locals: function(options) {
   //   // Return custom template variables here.

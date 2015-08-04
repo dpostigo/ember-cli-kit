@@ -1,13 +1,27 @@
+
+
 div.kit-canvas-scroller
 	/ div.kit-canvas-content {{bind-attr style="computedAngle"}}
 	/ div.kit-canvas-content style=canvasStyle
+
 	div.kit-canvas-content{bind-attr style=canvasStyle2}
-		== yield content
+		/ div.bg-yellow canvas: #{this.titles2}
+		/ div.bg-yellow canvas: #{this.testProperty}
+		== yield this
+
+
+	/ div.kit-canvas-content{bind-attr style=canvasStyle2}
+	/ 	Ember.ContainerView%div.kit-canvas-container
+	/ 		div.stuff more stuff
+
+
+div.something
+	p titles: #{titles}
 
 div.kit-canvas-navigation
 	div.flex.flex-justify.mx-auto.col-6
-		each items as |item index|
-			a{action 'slideToIndex' index} = index
+		each titles as |title index|
+			a{action 'slideToIndex' index} href="#" = title
 			/ a href="#" click="{slide index}" = index
 			/ a href="#" {action 'slide' index} = index
 			/ a href="#" click="'slide' index" = index
