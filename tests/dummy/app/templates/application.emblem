@@ -8,27 +8,6 @@ log '[dummy/application/template]'
 div.bg-darken-1.p1.m1
 	kit-canvas class="col-6" titles=slides as |canvas|
 
-		div.bg-yellow
-			div canvas.context: #{canvas.context}
-			div canvas.items: #{canvas.items}
-			div canvas: #{canvas}
-			div canvas.componentTitles: #{canvas.componentTitles}
-			div
-				each canvas.items as |item|
-					div.border.px2 item: #{item}
-
-
-		/ div.bg-yellow
-		/ 	div this: #{this}
-		/ 	div canvas: #{canvas}
-		/ 	div titles2: #{canvas.titles2}
-		/ 	div
-		/ 		div.bold canvas.items
-		/ 		div
-		/ 			each canvas.items as |item|
-		/ 				p something #{item}
-
-
 		div.bg-blue stuff
 		div.bg-red stuff
 
