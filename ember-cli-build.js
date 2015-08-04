@@ -14,6 +14,6 @@ module.exports = function(defaults) {
   */
 
   app.import('bower_components/basscss/css/basscss.css');
-  app.import('bower_components/ember/ember-template-compiler.js');
+  // app.import('bower_components/ember/ember-template-compiler.js');
   return app.toTree();
 };

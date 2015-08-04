@@ -4,7 +4,9 @@ div.kit-canvas-scroller
 	/ div.kit-canvas-content {{bind-attr style="computedAngle"}}
 	/ div.kit-canvas-content style=canvasStyle
 
-	div.kit-canvas-content{bind-attr style=canvasStyle2}
+	/ div.kit-canvas-content{bind-attr style=canvasStyle2}
+
+	div.kit-canvas-content style={{canvasStyle2}}
 		/ div.bg-yellow canvas: #{this.titles2}
 		/ div.bg-yellow canvas: #{this.testProperty}
 		== yield this
