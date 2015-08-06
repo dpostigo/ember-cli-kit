@@ -3,6 +3,7 @@ import layout from './template';
 
 export default Ember.Component.extend({
 	layout: layout,
+	classNames: ['kit-canvas-scroller'],
 
 	canvasStyle: Ember.computed('parentView.canvasStyle', function() {
 		return this.get('parentView').get('canvasStyle');

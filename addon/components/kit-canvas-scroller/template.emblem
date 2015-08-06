@@ -1,4 +1,3 @@
 
-div.kit-canvas-scroller
 	div.kit-canvas-content style={canvasStyle}
 		== yield this
