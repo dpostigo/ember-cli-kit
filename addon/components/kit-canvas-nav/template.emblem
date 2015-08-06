@@ -1,0 +1,11 @@
+
+div.kit-canvas-navigation.border
+	div.flex.flex-justify.mx-auto.col-6
+		= if hasBlock
+			each titles as |title index|
+				a{action action index} href="#"
+					= yield title index
+
+		else
+			each titles as |title index|
+				a{action action index} href="#" = title

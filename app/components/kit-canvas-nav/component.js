@@ -1,0 +1,1 @@
+export { default } from 'ember-kit/components/kit-canvas-nav/component';

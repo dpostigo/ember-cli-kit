@@ -1,1 +1,1 @@
-export { default } from 'ember-cli-kit/components/nav-item/component';
+export { default } from 'ember-kit/components/nav-item/component';

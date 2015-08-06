@@ -1,42 +1,64 @@
 import Ember from 'ember';
 import layout from './template';
 
-var CANVAS_CLASS = 'canvasClass';
+
+
 
 export default Ember.Component.extend({
 	layout: layout,
+	index: 0, 
 
+	classNames: ['kit-canvas'],
 
-	classNames: ['site-canvas'],
-	classNameBindings: [CANVAS_CLASS],
-
-	canvasIndex: 0,
+	transform: 'translate3d(0%,0,0)',
 	canvasStyle: 'transform: translate3d(0%,0,0)',
-	canvasStyle2: Ember.computed('canvasIndex', function() {
-		var value = this.get('canvasIndex') * -100;
-		var string = 'transform: translate3d(' + value + '%,0,0)';
-		return new Ember.Handlebars.SafeString(string);
+
+	numberOfItems: Ember.computed('scroller.numberOfItems', function() {
+		return this.get('scroller').get('numberOfItems');
+	}),
+
+
+	willInsertElement: Ember.on('willInsertElement', function() {
+		// console.log("[willInsertElement], this.parentView = ", this.parentView);
+		// console.log("[willInsertElement], this.element = ", this.element);
+		// console.log("this.get('itemsCount') = ", this.get('itemsCount'));
+
+		var children = this.$('.kit-canvas-content').children;
+		console.log("children.length = ", children.length);
+		// console.log("children.length = ", children.length);
+		// this.set('itemsCount', children.length);
+
+		// console.log("[willInsertElement], this._renderNode = ", this._renderNode);
+
 	}),
 
 	actions: {
-		slideToIndex: function(index) {
-			this.set('canvasIndex', index);
-			this.set(CANVAS_CLASS, 'canvas-' + index);
-
-			var value = index * -100;
-			this.set('canvasStyle', Ember.String('transform: translate3d(%@%,0,0)').fmt(value));
-
+		goPrevious: function() {
+			var max = this.get('numberOfItems');
+			var index = this.get('index');
+			if (index > 0) {
+				this.send('slideToIndex', index - 1);
+			}
 		},
-		slide: function() {
-		// console.log(this.get('pages'));
+		goNext: function() {
+			var max = this.get('numberOfItems');
+			var index = this.get('index');
+			if (index < max - 1) {
+				this.send('slideToIndex', index + 1);
+			}
+		},
+		slideToIndex: function(index) {
+			console.log("[kit-canvas/slideToIndex");
+			this.set('index', index);
+			var value = index * -100;
+			var transform = Ember.String.fmt('translate3d(%@%,0,0)', value);
+			console.log("transform = ", transform);
+			this.set('transform', Ember.Handlebars.SafeString(transform));
+			this.set('canvasStyle', Ember.String.htmlSafe('transform: ' + transform));
 
-
-		// var index = parseInt(this.get('param'), 10);
-		var index = this.get('param');
-		console.log("[slide], ", this);
-		console.log("index = ", index);
+		}
 
 
 	}
-}
+
 });

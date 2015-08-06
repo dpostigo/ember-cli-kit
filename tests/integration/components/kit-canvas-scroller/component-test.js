@@ -1,8 +1,7 @@
 import { moduleForComponent, test } from 'ember-qunit';
 import hbs from 'htmlbars-inline-precompile';
 
-
-moduleForComponent('/kit-canvas2', 'Integration | Component | kit canvas2', {
+moduleForComponent('/kit-canvas-scroller', 'Integration | Component | kit canvas scroller', {
   integration: true
 });
 
@@ -12,15 +11,15 @@ test('it renders', function(assert) {
   // Set any properties with this.set('myProperty', 'value');
   // Handle any actions with this.on('myAction', function(val) { ... });
 
-  this.render(hbs`{{kit-canvas2}}`);
+  this.render(hbs`{{kit-canvas-scroller}}`);
 
-  assert.equal(this.$().text(), '');
+  assert.equal(this.$().text().trim(), '');
 
   // Template block usage:
   this.render(hbs`
-    {{#kit-canvas2}}
+    {{#kit-canvas-scroller}}
       template block text
-    {{/kit-canvas2}}
+    {{/kit-canvas-scroller}}
   `);
 
   assert.equal(this.$().text().trim(), 'template block text');

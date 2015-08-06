@@ -1,62 +1,29 @@
 
 
-log '[dummy/application/template]'
-/ log '[dummy/application/template], firstName = ', firstName
+
+kit-canvas class="border col-12 p2 m2" as |mycanvas slideToIndex goNext goPrevious|
+	kit-canvas-scroller
+		div.bg-blue
+			h6 scroller: #{scroller}
+			h6 mycanvas: #{mycanvas}
+			h6 this: #{this}
+
+		div.bg-blue stuff
+		div.bg-blue stuff
+		div.bg-blue stuff
+		div.bg-blue stuff
+
+
+	/ kit-canvas-nav titles=slides action=slideToIndex
+	kit-canvas-nav action=slideToIndex titles=slides as |title index|
+		p = index
+
+
+		/ each titles as |title index|
+			/ a{action action index} href="#" = title
+
+	a click=goPrevious previous
+	a click=goNext next
 
 
 
-/ nav-item class="dropdown" as |menu|
-/ 	nav-item activeNav=menu as |link|
-/ 		= linkTo '' activeNav=link
-
-
-/ div.bg-darken-1.p1.m1
-/ 	kit-canvas class="col-6" titles=slides as |canvas|
-
-/ 		div.bg-yellow
-/ 			div canvas.context: #{canvas.context}
-/ 			div canvas.items: #{canvas.items}
-/ 			div canvas: #{canvas}
-/ 			div canvas.componentTitles: #{canvas.componentTitles}
-/ 			div
-/ 				each canvas.items as |item|
-/ 					div.border.px2 item: #{item}
-
-
-/ 		/ div.bg-yellow
-/ 		/ 	div this: #{this}
-/ 		/ 	div canvas: #{canvas}
-/ 		/ 	div titles2: #{canvas.titles2}
-/ 		/ 	div
-/ 		/ 		div.bold canvas.items
-/ 		/ 		div
-/ 		/ 			each canvas.items as |item|
-/ 		/ 				p something #{item}
-
-
-/ 		div.bg-blue stuff
-/ 		div.bg-red stuff
-
-	
-
-
-
-/ div.bg-darken-1.p1.m1
-/ 	h5 kit-canvas2 tests
-/ 	h6 test1
-/ 	kit-canvas2 class="col-3" items=slides as |item|
-/ 		/ a click="click" = index
-/ 		/ p.border = index
-/ 		div
-/ 			p = item
-/ 			p = index
-
-
-
-
-/ = firstName
-/ = slides
-
-
-/ simple-component items=slides
-	

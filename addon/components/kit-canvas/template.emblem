@@ -1,46 +1,5 @@
 
+/ kit-canvas-scroller canvasStyle=canvasStyle2
+= yield this (action 'slideToIndex') (action 'goNext') (action 'goPrevious') scroller
 
-div.kit-canvas-scroller
-	/ div.kit-canvas-content {{bind-attr style="computedAngle"}}
-	/ div.kit-canvas-content style=canvasStyle
-
-	/ div.kit-canvas-content{bind-attr style=canvasStyle2}
-
-	div.kit-canvas-content style={{canvasStyle2}}
-		/ div.bg-yellow canvas: #{this.titles2}
-		/ div.bg-yellow canvas: #{this.testProperty}
-		== yield this
-
-
-	/ div.kit-canvas-content{bind-attr style=canvasStyle2}
-	/ 	Ember.ContainerView%div.kit-canvas-container
-	/ 		div.stuff more stuff
-
-
-div.something
-	p titles: #{titles}
-
-div.kit-canvas-navigation
-	div.flex.flex-justify.mx-auto.col-6
-		each titles as |title index|
-			a{action 'slideToIndex' index} href="#" = title
-			/ a href="#" click="{slide index}" = index
-			/ a href="#" {action 'slide' index} = index
-			/ a href="#" click="'slide' index" = index
-			/ a href="#" click="{{action 'slide' index}}" = index
-			/ a href="#" {action 'slide' index}" = index
-			/ a href="#" click={action 'slide' index} = index
-			/ button{{action 'slide' index}} = index
-
-			/ button{action 'slide' index} = index
-
-		/ a href="#" click="slide" button
-		/ a href="#" click="slide" button
-		/ a href="#" click="slide" button
-		/ a href="#" click="slide" button
-
-/ div.kit-canvas-navigation.bg-red
-/     div.flex.flex-justify.mx-auto.col-6
-/         a href="#" click="slide" one
-/         a href="#" click="slide" one
 
