@@ -1,0 +1,14 @@
+import Ember from 'ember';
+import layout from './template';
+
+export default Ember.Component.extend({
+	layout: layout,
+	classNames: ['kit-offcanvas'],
+	classNameBindings: ['open'],
+	open: false,
+	actions: {
+	    toggle: function() {
+			this.toggleProperty('open');
+	    }
+	}
+});

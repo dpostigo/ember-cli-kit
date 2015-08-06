@@ -1,0 +1,13 @@
+
+
+
+
+
+kit-offcanvas-sidebar as |sidebar|
+
+	div.flex-auto sidebarcontent
+	div.p2.navicon-container
+		a.navicon click="toggle" toggle
+
+
+= yield this (action 'toggle') sidebar

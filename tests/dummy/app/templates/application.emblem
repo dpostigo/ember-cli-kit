@@ -1,29 +1,35 @@
+kit-offcanvas as |offcanvas slide sidebar|
+	/ div inner content here
+
+	div.kit-offcanvas-content
+		p content here
+
+	/ p yield
 
 
+/ kit-canvas class="border col-12 p2 m2" as |mycanvas slideToIndex goNext goPrevious|
+/ 	kit-canvas-scroller
+/ 		div.bg-blue
+/ 			h6 scroller: #{scroller}
+/ 			h6 mycanvas: #{mycanvas}
+/ 			h6 this: #{this}
 
-kit-canvas class="border col-12 p2 m2" as |mycanvas slideToIndex goNext goPrevious|
-	kit-canvas-scroller
-		div.bg-blue
-			h6 scroller: #{scroller}
-			h6 mycanvas: #{mycanvas}
-			h6 this: #{this}
-
-		div.bg-blue stuff
-		div.bg-blue stuff
-		div.bg-blue stuff
-		div.bg-blue stuff
-
-
-	/ kit-canvas-nav titles=slides action=slideToIndex
-	kit-canvas-nav action=slideToIndex titles=slides as |title index|
-		p = index
+/ 		div.bg-blue stuff
+/ 		div.bg-blue stuff
+/ 		div.bg-blue stuff
+/ 		div.bg-blue stuff
 
 
-		/ each titles as |title index|
-			/ a{action action index} href="#" = title
+/ 	/ kit-canvas-nav titles=slides action=slideToIndex
+/ 	kit-canvas-nav action=slideToIndex titles=slides as |title index|
+/ 		p = index
 
-	a click=goPrevious previous
-	a click=goNext next
+
+/ 		/ each titles as |title index|
+/ 			/ a{action action index} href="#" = title
+
+/ 	a click=goPrevious previous
+/ 	a click=goNext next
 
 
 
