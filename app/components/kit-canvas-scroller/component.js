@@ -1,1 +1,1 @@
-export { default } from 'ember-kit/components/kit-canvas-scroller/component';
+export { default } from 'ember-cli-kit/components/kit-canvas-scroller/component';

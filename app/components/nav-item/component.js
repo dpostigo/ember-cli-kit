@@ -1,1 +1,0 @@
-export { default } from 'ember-kit/components/nav-item/component';
