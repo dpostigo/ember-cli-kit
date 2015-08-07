@@ -1,10 +1,77 @@
-kit-offcanvas as |offcanvas slide sidebar|
-	/ div inner content here
 
-	div.kit-offcanvas-content
-		p content here
 
-	/ p yield
+kit-offcanvas as |section toggleAction|
+	
+	if section.toggle
+		a.navicon click=toggleAction miao!
+		/ a.navicon click=toggleAction hello
+
+	if section.sidebar
+		p this sidebar
+
+	if section.body
+		p this body
+
+
+
+	
+
+kit-experiment as |experiment|
+
+
+	= for-content 'toggle2'
+
+/ kit-sectionable class="col-3 flex flex-wrap" sections="header footer" as |section|
+
+/ 	if section.header
+/ 		p this header
+
+/ 	if section.footer
+/ 		p this footer
+
+
+
+
+
+
+/ kt-sidebar class="col-3" as |sidebar|
+/ 	kt-canvas sidebar=sidebar as |offcanvas|
+/ 		p stuff
+
+
+/ kit-offcanvas open=false as |offcanvas slide sidebar|
+		
+
+/ 	/ kit-offcanvas-sidebar as |sidebar|
+/ 	/ 	div.flex-auto
+/ 	/ 		= yield sidebar
+		
+/ 	/ 	div.navicon-container
+/ 	/ 		a.navicon click=slide toggle
+
+
+/ 	/ kit-offcanvas-content
+/ 	/ 	p content here!
+
+/ 	p CONTENT
+
+/ 	/ div.kit-offcanvas-sidebar
+/ 	/ 	div.flex-auto stuff here
+/ 	/ 	div.navicon-container
+/ 	/ 		a.navicon click=slide toggle
+
+
+/ 	/ 	/ div.flex.flex-justify.m2#nav
+/ 	/ 	/ 	div: a.searchicon = inline-svg 'searchicon' class="icon14"
+
+/ 	/ 	/ 	div.flex
+/ 	/ 	/ 		a.navicon click="toggleCanvas"
+/ 	/ 	/ 			= inline-svg 'navicon' class="icon16"
+
+/ 	/ div.kit-offcanvas-content
+/ 	/ 	p yield here
+
+/ 	/ p yield
 
 
 / kit-canvas class="border col-12 p2 m2" as |mycanvas slideToIndex goNext goPrevious|

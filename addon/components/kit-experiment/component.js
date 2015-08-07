@@ -2,7 +2,5 @@ import Ember from 'ember';
 import layout from './template';
 
 export default Ember.Component.extend({
-  layout: layout,
-
-  classNames: ['kit-offcanvas-sidebar']
+  layout: layout
 });

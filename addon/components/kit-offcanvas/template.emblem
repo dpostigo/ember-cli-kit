@@ -1,13 +1,88 @@
 
 
+div.kit-offcanvas-sidebar
+	div.flex-auto 
+		= yield sidebar
+
+	div.navicon-container
+		if hasToggle
+			= yield toggle (action 'toggle')
+		else
+			a.navicon click="toggle" toggle
+
+
+div.kit-offcanvas-content = yield body
+
+= yield this (action 'toggle')
 
 
 
-kit-offcanvas-sidebar as |sidebar|
+/ div.kit-offcanvas-sidebar
+/ 	div.flex-auto SIDEBAR
 
-	div.flex-auto sidebarcontent
-	div.p2.navicon-container
-		a.navicon click="toggle" toggle
+/ 	div.navicon-container
+/ 		a.navicon click="toggle" toggle
 
 
-= yield this (action 'toggle') sidebar
+/ div.kit-offcanvas-content
+/ 	if section.body
+/ 		p this body
+
+
+/ p sidebar:
+/ 	= yield sidebar
+
+/ p body
+/ 	= yield body
+
+/ log 'section: ' section
+
+/ = yield section
+
+
+/ each sections as |section|
+
+/ 	= section
+
+
+/ kit-sectionable open=true class="bg-blue" sections="sidebar body" as |section|
+
+
+/ 	if section.sidebar
+/ 		p this header
+
+/ 	if section.body
+/ 		p this body
+
+
+
+/ = yield section (action 'toggle')
+
+
+/ kit-offcanvas-sidebar as |sidebar|
+/ 	div.flex-auto SIDEBAR
+/ 	div.navicon-container
+/ 		a.navicon click="toggle" toggle
+
+
+
+
+
+/ kit-component as |sidebar|
+/ 	p something
+
+/ = yield this (action 'toggle')
+
+/ kit-offcanvas-sidebar as |sidebar|
+
+/ 	div.flex-auto
+/ 		= sidebar
+	
+/ 	div.navicon-container
+/ 		a.navicon click="toggle" toggle
+
+
+/ div.kit-offcanvas-content
+/ 	= yield this (action 'toggle') sidebar
+
+
