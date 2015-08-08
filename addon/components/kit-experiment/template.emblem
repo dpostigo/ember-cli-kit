@@ -1,1 +1,10 @@
-= yield
+div.bg-blue
+	= yield section1
+
+
+div.bg-red
+	= yield section2
+
+
+div.bg-yellow
+	= yield header

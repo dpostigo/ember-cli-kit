@@ -1,38 +1,95 @@
 import Ember from 'ember';
 
 export default Ember.Mixin.create({
-	didInsertElement: Ember.on('didInsertElement', function() {
-		// this.parseSections();
+
+	onInit: Ember.on('init', function() {
+		this.sectionableParse();
 	}),
 
-	parseSections: function () {
-		var sections = this.get('sections').split(' ');
+	sectionsParameterName: 'sections',
+	sectionNames: Ember.computed('sectionsParameterName', function() {
+		return this.get(this.get('sectionsParameterName')).split(' ');
+	}),
 
-		// var section = {};
-		// for (var i = 0; i < sections.length; i++) {
-		// 	section[sections[i]] = true;
-		// };
-		// this.set('section', section);
-		// console.log("section = ", section);
 
-		var section = {};
+
+	/**
+	 * sectionableParse
+	 *
+	 * 
+	 */
+	sectionableParse: function() {
+		console.log("[sectionableParse]");
+		var sections = this.get('sectionArray');
 		for (var i = 0; i < sections.length; i++) {
-			var name = sections[i];
-			// var obj = {};
-			// obj['has' + Ember.String.capitalize(name)] = true;
-			var obj = {};
-			obj[name] = true;
-			this.set(name, obj);
+			var object = sections[i];
+			var name = object.meta.name;
+			this.set(name, object);
+			this.set(object.meta.has, true);
+		}
+	},
 
-			var hasString = 'has' + Ember.String.capitalize(name);
-			this.set(hasString, true);
+	sectionableParseDebug: function() {
+		var sections = this.get('sectionArray');
 
-			// console.log("this.get(name) = ", this.get(name));
-			// console.log("this.get(hasString) = ", this.get(hasString));
-			// console.log("hasString = ", hasString);	
+		for (var i = 0; i < sections.length; i++) {
+			var object = sections[i];
+			var name = object.meta.name;
+			console.log("this.get(", object.meta.name, ") = ", this.get(object.meta.name));
+			console.log("this.get(", object.meta.has, ") = ", this.get(object.meta.has));
+		}
+	},
 
-		};
 
 
-	}
+
+
+	/**
+	 * sectionHash
+	 * @type {hash}
+	 * 
+	 *
+	 */
+	sectionHash: Ember.computed.alias('sectionsAsHash'),
+	sectionsAsHash: Ember.computed('sectionNames', function() {
+	  var array = this.get('sectionsAsArray');
+
+	  var ret = {};
+	  for (var i = 0; i < array.length; i++) {
+	    var object = array[i];
+	    ret[object.name] = object;
+	  }
+	  return ret;
+	}),
+
+
+	/**
+	 * 
+	 * sectionArray
+	 * @type {array}
+	 * 
+	 */
+	sectionArray: Ember.computed.alias('sectionsAsArray'),
+	sectionsAsArray: Ember.computed('sectionNames', function() {
+	  var names = this.get('sectionNames');
+	  
+	  var ret = [];
+	  for (var i = 0; i < names.length; i++) {
+	    var name = names[i];
+	    var meta = {name: name, has: 'has' + Ember.String.capitalize(name) };
+
+	    var object = {meta: meta};
+	    object[name] = true;
+	    ret[i] = object;
+
+	    // var object = {name: name};
+	    // object['has'] = 'has' + Ember.String.capitalize(name);
+
+
+	    // object[meta.has] = true;
+
+	  }
+	  return ret;
+
+	}),
 });

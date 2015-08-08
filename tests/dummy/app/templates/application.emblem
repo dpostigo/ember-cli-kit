@@ -16,10 +16,16 @@ kit-offcanvas as |section toggleAction|
 
 	
 
-kit-experiment as |experiment|
+/ kit-experiment as |experiment|
+
+/ 	if experiment.section1
+/ 		p I am section1
+
+/ 	if experiment.section2
+/ 		p I am section2
 
 
-	= for-content 'toggle2'
+/ 	= for-content 'toggle2'
 
 / kit-sectionable class="col-3 flex flex-wrap" sections="header footer" as |section|
 
