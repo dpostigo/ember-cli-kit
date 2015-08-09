@@ -1,0 +1,22 @@
+p i am index
+
+
+div.flex.flex-justify.m2#nav
+	div.flex.navicon-container
+		/ a.navicon click="toggleCanvas"
+			/ = inline-svg 'navicon' class="icon16"
+	div 
+		a.searchicon yellow
+		/ a.searchicon = inline-svg 'searchicon' class="icon14"
+
+p body
+
+div.flex.link-footer2
+	div.flex.flex-wrap.mx-auto
+		a href="" iOS
+		a.uppercase href="" SF
+		a.uppercase href="" Web
+		a.uppercase href="" New York
+		a.uppercase href="" Design
+
+

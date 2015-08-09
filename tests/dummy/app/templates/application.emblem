@@ -1,16 +1,15 @@
 
-
-/ kit-offcanvas as |section toggleAction|
+kit-offcanvas as |section toggleAction|
 	
-/ 	if section.toggle
-/ 		a.navicon click=toggleAction miao!
-/ 		/ a.navicon click=toggleAction hello
+	if section.toggle
+		a.navicon click=toggleAction miao!
+		/ a.navicon click=toggleAction hello
 
-/ 	if section.sidebar
-/ 		p this sidebar
+	if section.sidebar
+		p this sidebar
 
-/ 	if section.body
-/ 		p this body
+	if section.body
+		= outlet
 
 
 
