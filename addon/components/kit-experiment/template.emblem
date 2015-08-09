@@ -1,10 +1,20 @@
-div.bg-blue
-	= yield section1
 
 
-div.bg-red
-	= yield section2
+if hasBlockParams
+
+	div.bg-blue
+		= yield section1
 
 
-div.bg-yellow
-	= yield header
+	div.bg-red
+		= yield section2
+
+
+	div.bg-yellow
+		= yield header
+
+
+else
+
+	= yield this
+/ = yield this

@@ -1,13 +1,18 @@
 import Ember from 'ember';
 import layout from './template';
-
-export default Ember.Component.extend({
-  layout: layout,
+import Sectionable from '../../mixins/sectionable';
 
 
-  onInit: Ember.on('init', function() {
-  	// this.parseSections();
-  }),
+
+export default Ember.Component.extend(Sectionable, {
+	layout: layout,
+
+	sections: 'section1 section2 header',
+	// sections: 'toggle sidebar body',
+
+  // onInit: Ember.on('init', function() {
+  // 	// this.parseSections();
+  // }),
 
 
   // sections: Ember.computed('sectionNames', function() {
@@ -33,11 +38,10 @@ export default Ember.Component.extend({
   // }),
 
 
-	sections: 'section1 section2 header',
-  sectionsParameterName: 'parameter',
-  sectionNames: Ember.computed('sectionsParameterName', function() {
-  	return this.get(this.get('sectionsParameterName')).split(' ');
-  }),
+  // sectionsParameterName: 'parameter',
+  // sectionNames: Ember.computed('sectionsParameterName', function() {
+  // 	return this.get(this.get('sectionsParameterName')).split(' ');
+  // }),
 
 
 

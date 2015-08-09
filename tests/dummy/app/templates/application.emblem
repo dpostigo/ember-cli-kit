@@ -1,28 +1,35 @@
 
 
-kit-offcanvas as |section toggleAction|
+/ kit-offcanvas as |section toggleAction|
 	
-	if section.toggle
-		a.navicon click=toggleAction miao!
-		/ a.navicon click=toggleAction hello
+/ 	if section.toggle
+/ 		a.navicon click=toggleAction miao!
+/ 		/ a.navicon click=toggleAction hello
 
-	if section.sidebar
-		p this sidebar
+/ 	if section.sidebar
+/ 		p this sidebar
 
-	if section.body
-		p this body
+/ 	if section.body
+/ 		p this body
 
 
+
+
+
+
+kit-experiment 'something'
+	p something?
+	for-content 'woot' 'woot2'
 
 	
 
-/ kit-experiment as |experiment|
+kit-experiment as |comp|
 
-/ 	if experiment.section1
-/ 		p I am section1
+	if comp.section1
+		p I am section1
 
-/ 	if experiment.section2
-/ 		p I am section2
+	if comp.section2
+		p I am section2
 
 
 / 	= for-content 'toggle2'
