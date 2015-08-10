@@ -18,7 +18,7 @@ module.exports = function(defaults) {
   
   app.import(app.bowerDirectory + '/kit-ember/css/kit-ember.css');
 
-  app.import('bower_components/ember/ember-template-compiler.js');
+  // app.import('bower_components/ember/ember-template-compiler.js');
   
   return app.toTree();
 };

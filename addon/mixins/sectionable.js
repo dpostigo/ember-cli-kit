@@ -19,7 +19,6 @@ export default Ember.Mixin.create({
 	 * 
 	 */
 	sectionableParse: function() {
-		console.log("[sectionableParse]");
 		var sections = this.get('sectionArray');
 		for (var i = 0; i < sections.length; i++) {
 			var object = sections[i];

@@ -1,3 +1,3 @@
 
-	div.kit-canvas-content style={canvasStyle}
-		== yield this
+div.kit-canvas-content style={canvasStyle}
+	== yield this

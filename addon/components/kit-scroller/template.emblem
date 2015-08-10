@@ -1,0 +1,14 @@
+
+
+
+div.kit-scroller
+
+	div.kit-scroller-content style={canvasStyle}
+		= yield content (action 'slideToIndex') (action 'goPrevious') (action 'goNext')
+
+
+	div.kit-scroller-frame
+		= yield frame (action 'slideToIndex') (action 'goPrevious') (action 'goNext')
+
+
+= yield other (action 'slideToIndex') (action 'goPrevious') (action 'goNext')

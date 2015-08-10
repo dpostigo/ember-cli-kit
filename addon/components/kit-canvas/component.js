@@ -36,8 +36,6 @@ export default Ember.Component.extend({
 			this.set('canvasStyle', Ember.String.htmlSafe('transform: ' + transform));
 
 		}
-
-
 	}
 
 });

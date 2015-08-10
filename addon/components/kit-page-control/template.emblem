@@ -1,0 +1,15 @@
+div.kit-page-control-previous
+	= yield previous
+
+div.kit-page-control-items
+	if hasCount
+		each items as |item index|
+			a{action action index} class=selectedIndexClass
+				kit-circle radius=radius style=style
+				
+
+	else
+		div.kit-page-control-item
+
+div.kit-page-control-next
+	= yield next

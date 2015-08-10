@@ -1,34 +1,34 @@
 
-kit-offcanvas as |section toggleAction|
+/ kit-offcanvas as |section toggleAction|
 	
-	if section.toggle
-		a.navicon click=toggleAction miao!
-		/ a.navicon click=toggleAction hello
+/ 	if section.toggle
+/ 		a.navicon click=toggleAction miao!
+/ 		/ a.navicon click=toggleAction hello
 
-	if section.sidebar
-		p this sidebar
+/ 	if section.sidebar
+/ 		p this sidebar
 
-	if section.body
-		= outlet
-
-
+/ 	if section.body
+/ 		= outlet
 
 
 
 
-kit-experiment 'something'
-	p something?
-	for-content 'woot' 'woot2'
+
+
+/ kit-experiment 'something'
+/ 	p something?
+/ 	for-content 'woot' 'woot2'
 
 	
 
-kit-experiment as |comp|
+/ kit-experiment as |comp|
 
-	if comp.section1
-		p I am section1
+/ 	if comp.section1
+/ 		p I am section1
 
-	if comp.section2
-		p I am section2
+/ 	if comp.section2
+/ 		p I am section2
 
 
 / 	= for-content 'toggle2'
@@ -85,30 +85,78 @@ kit-experiment as |comp|
 
 / 	/ p yield
 
+div.p2.bg-darken-1.border.col-6.flex style="height:100vh"
+	kit-scroller class="p3" as |scroller goto previous next|
 
-/ kit-canvas class="border col-12 p2 m2" as |mycanvas slideToIndex goNext goPrevious|
-/ 	kit-canvas-scroller
-/ 		div.bg-blue
-/ 			h6 scroller: #{scroller}
-/ 			h6 mycanvas: #{mycanvas}
-/ 			h6 this: #{this}
+		if scroller.frame
+			div.m1.flex.flex-justify.col-12
+				div.flex.flex-center.p1
+					a click=previous = kit-circle radius=5
 
-/ 		div.bg-blue stuff
-/ 		div.bg-blue stuff
-/ 		div.bg-blue stuff
-/ 		div.bg-blue stuff
-
-
-/ 	/ kit-canvas-nav titles=slides action=slideToIndex
-/ 	kit-canvas-nav action=slideToIndex titles=slides as |title index|
-/ 		p = index
+				kit-page-control action=goto count=5 class="flex flex-end col-12"
+				
+				div.flex.flex-center.p1
+					a click=next = kit-circle radius=5
 
 
-/ 		/ each titles as |title index|
-/ 			/ a{action action index} href="#" = title
 
-/ 	a click=goPrevious previous
-/ 	a click=goNext next
+
+
+
+			/ div.border.col-12.m1.flex.flex-end
+				/ kit-page-control action=goto count=5 class="border flex"
+					/ if control.previous: a click=previous previous
+					/ if control.next: a click=next next
+
+			/ div.border.col-12.m1.flex
+			/ 	/ div.col-6.flex-column.flex-end.m1
+			/ 	/ 	div.border row1!
+			/ 	/ 	div.border row2!
+
+
+			/ 	/ div.col-6.border.m1 I expand!
+
+				
+
+
+			/ div.col-12.white.flex.flex-column.flex-stretch
+			/ 	div.m1.border I'm in the frame!
+			/ 	div.border I'm on the bottom!
+
+			/ p this stuff is in the frame!
+
+		if scroller.content
+			each items as |item index|
+				div.bg-blue.flex.flex-center
+					div.white.mx-auto.p1.m3 = item
+
+		/ if scroller.other
+		/ 	kit-page-control action=goto count=5 as |control|
+		/ 		if control.previous: a click=previous previous
+		/ 		if control.next: a click=next next
+
+		
+
+
+kit-canvas class="border col-12 p2 m2" as |mycanvas slideToIndex goNext goPrevious|
+	kit-canvas-scroller
+		div.bg-blue 1
+		div.bg-blue 2
+		div.bg-blue 3
+		div.bg-blue 4
+		div.bg-blue 4
+
+
+	/ kit-canvas-nav titles=slides action=slideToIndex
+	kit-canvas-nav action=slideToIndex titles=slides as |title index|
+		p = index
+
+
+		/ each titles as |title index|
+			/ a{action action index} href="#" = title
+
+	a click=goPrevious previous
+	a click=goNext next
 
 
 

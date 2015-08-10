@@ -1,0 +1,14 @@
+div.flex.flex-justify.col-12
+	/ div.border.flex.flex-center
+	/ 	a click=previous = kit-circle radius=5
+
+	/ / div.border.flex.flex-end
+	
+	/ kit-page-control action=goto count=5 class="flex flex-end col-12"
+	
+	/ div.border.flex.flex-center
+	/ 	a click=next = kit-circle radius=5
+
+
+
+

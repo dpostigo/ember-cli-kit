@@ -11,7 +11,8 @@ div.kit-offcanvas-sidebar
 			a.navicon click="toggle" toggle
 
 
-div.kit-offcanvas-content = yield body
+div.kit-offcanvas-content
+	= yield body
 
 = yield this (action 'toggle')
 

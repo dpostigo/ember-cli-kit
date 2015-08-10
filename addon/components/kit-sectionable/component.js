@@ -9,7 +9,7 @@ export default Ember.Component.extend({
   	var section = {};
   	for (var i = 0; i < sections.length; i++) {
   		section[sections[i]] = true;
-  	};
+  	}
 
   	this.set('section', section);
   }),
