@@ -85,7 +85,7 @@
 
 / 	/ p yield
 
-div.p2.bg-darken-1.border.col-6.flex style="height:100vh"
+div.p2.bg-darken-1.border.col-6.flex.100vh
 	kit-scroller class="p3" as |scroller goto previous next|
 
 		if scroller.frame
